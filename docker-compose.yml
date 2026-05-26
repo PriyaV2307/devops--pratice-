@@ -1,0 +1,9 @@
+services:
+ app:
+  build: .
+  image: priyav2307/devops-practice-app:v1
+  container_name: app
+  ports:
+    - "8080:8080"
+  restart: unless-stopped
+
