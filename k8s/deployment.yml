@@ -21,5 +21,18 @@ spec:
         - name: app
           image: priyav2307/devops-practice-app:v1
 
+          env:
+            - name: APP_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: APP_NAME
+
+            - name: ENVIRONMENT
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: ENVIRONMENT
+
           ports:
             - containerPort: 8080
